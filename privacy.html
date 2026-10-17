@@ -10,7 +10,7 @@
   <main>
     <p><a href="./">MoonshotMail</a></p>
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective October 14, 2026</p>
+    <p class="meta">Effective October 16, 2026</p>
 
     <p>MoonshotMail is a personal macOS email client. Its developer builds it for their own use with their own Google accounts, and it isn't distributed to anyone else. This policy describes how MoonshotMail handles data it receives from Google.</p>
 
@@ -29,7 +29,7 @@
     </ul>
 
     <h2>Where it's stored</h2>
-    <p>MoonshotMail runs entirely on your Mac and talks directly to Google's APIs, plus the sender-picture lookups described below. It keeps a local copy of mail metadata and content in a database on your Mac so it can work quickly and search offline, and it stores sign-in tokens in the macOS Keychain. There's no MoonshotMail server. The app has no analytics, telemetry, or advertising.</p>
+    <p>MoonshotMail runs entirely on your Mac and talks directly to Google's APIs, plus the picture downloads described below. It keeps a local copy of mail metadata and content in a database on your Mac so it can work quickly and search offline, and it stores sign-in tokens in the macOS Keychain. There's no MoonshotMail server. The app has no analytics, telemetry, or advertising.</p>
 
     <h2>Sender pictures</h2>
     <p>To show a picture beside each sender, MoonshotMail looks in this order:</p>
@@ -39,10 +39,14 @@
       <li><strong>The sender's own website,</strong> for a company address. MoonshotMail requests the public home page of the sender's domain and the icon files it lists. The request names only the domain, never your address or anything from your mail.</li>
       <li><strong>Gravatar</strong> (gravatar.com), for a person. MoonshotMail sends a one-way SHA-256 hash of the sender's email address, which is how Gravatar looks pictures up.</li>
     </ul>
-    <p>Pictures, and "no picture found" results, are cached on your Mac, so each source is asked rarely. Logos and Gravatars aren't shown beside messages that fail Gmail's sender authentication. Nothing else from your mail is sent anywhere.</p>
+    <p>Pictures, and "no picture found" results, are cached on your Mac, so each source is asked rarely. Logos and Gravatars aren't shown beside messages that fail Gmail's sender authentication.</p>
+
+    <h2>Pictures in automated mail</h2>
+    <p>Newsletters, sales, receipts, and other automated mail often show pictures kept on the sender's servers. MoonshotMail downloads those pictures in the background when such mail arrives, whether or not you ever read it, and never at the moment you read it, so a sender can't tell whether or when you opened a message. Before downloading anything, it removes tracking pixels: tiny or hidden images, and images from mail services' open-tracking addresses, which exist only to report that mail was opened. Those are never downloaded.</p>
+    <p>The other pictures are downloaded straight from the addresses in the mail, over HTTPS and without cookies, and kept on your Mac until the mail leaves your inbox. As with any mail app that shows pictures, the servers that host them see your Mac's IP address, which suggests a rough location, when the mail arrives. Other mail never loads pictures from the internet unless you ask to see a message's original with its remote images. Apart from these pictures and the sender-picture lookups above, nothing from your mail is sent anywhere.</p>
 
     <h2>Sharing</h2>
-    <p>MoonshotMail doesn't sell your Google data, and it doesn't share or transfer it to anyone, except for the sender-picture lookups above: a sender's domain goes to that domain's own website, and a hash of a sender's address goes to Gravatar. It doesn't use your data for advertising, and it doesn't use your data to develop, improve, or train generalized AI or machine-learning models.</p>
+    <p>MoonshotMail doesn't sell your Google data, and it doesn't share or transfer it to anyone, except for the picture requests above: a sender's domain goes to that domain's own website, a hash of a sender's address goes to Gravatar, and the pictures in automated mail are requested from the addresses that mail names. It doesn't use your data for advertising, and it doesn't use your data to develop, improve, or train generalized AI or machine-learning models.</p>
 
     <p>MoonshotMail's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
 
